@@ -2,9 +2,10 @@ package com.example.employeemanagement.repository;
 
 import com.example.employeemanagement.model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface EmployeeRepository extends JpaRepository<Employee, Long> {
-    // Standard CRUD operations are automatically provided by JpaRepository
+public interface EmployeeRepository extends JpaRepository<Employee, Long>, JpaSpecificationExecutor<Employee> {
+    // JpaSpecificationExecutor adds: Page<T> findAll(Specification<T> spec, Pageable pageable);
 }

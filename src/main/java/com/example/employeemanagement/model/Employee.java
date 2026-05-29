@@ -2,6 +2,8 @@ package com.example.employeemanagement.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "employees")
@@ -26,4 +28,8 @@ public class Employee {
 
     @Column(nullable = false)
     private Double salary;
+
+    @CreationTimestamp
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
 }

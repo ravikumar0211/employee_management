@@ -1,12 +1,10 @@
 package com.example.employeemanagement.service;
 
 import com.example.employeemanagement.dto.EmployeeDTO;
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface EmployeeService {
-    EmployeeDTO createEmployee(EmployeeDTO employeeDTO);
-    List<EmployeeDTO> getAllEmployees();
-    EmployeeDTO getEmployeeById(Long id);
-    EmployeeDTO updateEmployee(Long id, EmployeeDTO employeeDTO);
-    void deleteEmployee(Long id);
+    // Other CRUD operations remain untouched
+    Page<EmployeeDTO> getAllEmployees(String department, String name, String email, Pageable pageable);
 }
